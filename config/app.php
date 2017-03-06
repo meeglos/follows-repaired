@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Follows',
+    'name' => 'Nombre de mi aplicación',
 
     /*
     |--------------------------------------------------------------------------
@@ -227,6 +227,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Access' => Styde\Html\Facades\Access::class,
+        'Markdown' => GrahamCampbell\Markdown\facades\Markdown::class,
 
     ],
 

@@ -11,8 +11,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    {{--<link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css') }}" rel="stylesheet">--}}
+    {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/my-css.css" rel="stylesheet">
+    <link href="/css/my-css-tooltip.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -42,10 +46,15 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
+                    @if(Auth::user())
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ route('tasks.index') }}">Emisión</a></li>
+                            <li><a href="#">Transferencias</a></li>
+                            <li><a href="#">Comunicados</a></li>
+                            <li><a href="#">Ventas</a></li>
+                            <li><a href="{{ route('tags.index') }}">Etiquetas</a></li>
+                        </ul>
+                    @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -81,7 +90,11 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{--scripts--}}
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script>$('#tag_list').select2();</script>
+    <script src="/js/app.js"></script>
+    <script src="/js/my-js.js"></script>
 </body>
 </html>
