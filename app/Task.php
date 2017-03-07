@@ -52,6 +52,11 @@ class Task extends Model
 
     public function getTooltipAttribute()
     {
-        return '<span class="follow-author">' . $this->description . '</span> <br><u>Persona contacto</u>: ' . $this->client_name . ' <br>  <u>Teléfono contacto</u>:  ' . $this->client_phone;
+        return '<span class="follow-author">' . $this->description . '</span> <br><u class="orange-text">Persona contacto</u>: ' . $this->client_name . ' <br>  <u class="orange-text">Teléfono contacto</u>:  ' . $this->client_phone;
     }
+
+//    public function getStatusAttribute()
+//    {
+//        if ($this->pending)
+//    }
 }

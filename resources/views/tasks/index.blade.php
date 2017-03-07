@@ -23,7 +23,11 @@
                             {{ str_limit($task->description, 80) }} | <b style="color: #2d760c;">Creado por: <u>{{ $task->user->name }}</u></b> {{ $task->dif }}
                         </a>
                         <span class="badge">{{ $task->count }}</span>
-                        <span class="label label-info pull-right" style="padding: 5px 10px; font-size: .8em; font-weight: 100;">Pendiente</span>
+                        @if($task->pending)
+                            <span class="label label-warning pull-right" style="padding: 5px 10px; font-size: .8em; font-weight: 100;">Pendiente</span>
+                        @else
+                            <span class="label label-success pull-right" style="padding: 5px 10px; font-size: .8em; font-weight: 100;">Finalizado</span>
+                        @endif
                     </div>
                 </div>
             @endforeach

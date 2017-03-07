@@ -42,6 +42,7 @@
     padding: 0 5px;
 }
 .tooltip-inner {
+    min-width: 400px;
     max-width: 600px;
     padding: 3px 8px;
     color: #FAFAFA;
